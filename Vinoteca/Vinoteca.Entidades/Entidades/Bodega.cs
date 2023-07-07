@@ -8,7 +8,7 @@ namespace Vinoteca.Entidades.Entidades
 {
     public class Bodega
     {
-        public int IdBodega { get; set; }
+        public int BodegaId { get; set; }
         public string NombreBodega { get; set; }
 
         public string Direccion { get; set; }

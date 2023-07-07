@@ -8,7 +8,7 @@ namespace Vinoteca.Entidades.Entidades
 {
     public class Variedad
     {
-        public int IdVariedad { get; set; }
+        public int VariedadId { get; set; }
         public string NombreVariedad { get; set; }
         public byte[] RowVersion { get; set; }
     }

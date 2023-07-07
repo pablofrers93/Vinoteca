@@ -8,8 +8,8 @@ namespace Vinoteca.Entidades.Entidades
 {
     public class Venta
     {
-        public int IdVenta { get; set; }
-        public int IdUsuario { get; set; }
+        public int VentaId { get; set; }
+        public int UsuarioId { get; set; }
         public DateTime Fecha { get; set; }
         public int Numero { get; set; }
         public bool Anulado { get; set; }

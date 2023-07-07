@@ -91,45 +91,6 @@
     <Compile Include="Interfaces\IRepositorioVentas.cs" />
     <Compile Include="Interfaces\IRepositorioVentasProductos.cs" />
     <Compile Include="IUnitOfWork.cs" />
-    <Compile Include="Models\Bodega.cs">
-      <DependentUpon>VinotecaDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Producto.cs">
-      <DependentUpon>VinotecaDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Rol.cs">
-      <DependentUpon>VinotecaDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TipoProducto.cs">
-      <DependentUpon>VinotecaDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Usuario.cs">
-      <DependentUpon>VinotecaDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Variedad.cs">
-      <DependentUpon>VinotecaDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Venta.cs">
-      <DependentUpon>VinotecaDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VentasProducto.cs">
-      <DependentUpon>VinotecaDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VinotecaDbContext.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VinotecaDbContext.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VinotecaDbContext.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VinotecaDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VinotecaDbContext.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VinotecaDbContext.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\RepositorioBodegas.cs" />
     <Compile Include="Repositorios\RepositorioProductos.cs" />
@@ -146,13 +107,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Models\VinotecaDbContext.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>VinotecaDbContext.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Models\VinotecaDbContext.edmx.diagram">
-      <DependentUpon>VinotecaDbContext.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -160,18 +114,6 @@
       <Project>{dc9f1a0a-bc96-493f-aff0-688ede43f865}</Project>
       <Name>Vinoteca.Entidades</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Models\VinotecaDbContext.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>VinotecaDbContext.edmx</DependentUpon>
-      <LastGenOutput>VinotecaDbContext.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\VinotecaDbContext.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>VinotecaDbContext.edmx</DependentUpon>
-      <LastGenOutput>VinotecaDbContext.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

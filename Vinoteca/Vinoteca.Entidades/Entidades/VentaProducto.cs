@@ -8,9 +8,9 @@ namespace Vinoteca.Entidades.Entidades
 {
     public class VentaProducto
     {
-        public int IdVentaProducto { get; set; }
-        public int IdVenta { get; set; }
-        public int IdProducto { get; set; }
+        public int VentaProductoId { get; set; }
+        public int VentaId { get; set; }
+        public int ProductoId { get; set; }
         public int Cantidad { get; set; }
         public decimal Precio { get; set; }
 

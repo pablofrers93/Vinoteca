@@ -8,7 +8,7 @@ namespace Vinoteca.Entidades.Dtos.Producto
 {
     public class ProductoListDto
     {
-        public int IdProducto { get; set; }
+        public int ProductoId { get; set; }
         public string Descripcion { get; set; }
         public string Variedad { get; set; }
         public string TipoProducto { get; set; }

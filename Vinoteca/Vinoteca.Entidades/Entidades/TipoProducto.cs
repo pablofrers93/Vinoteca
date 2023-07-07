@@ -8,7 +8,7 @@ namespace Vinoteca.Entidades.Entidades
 {
     public class TipoProducto
     {
-        public int IdTipoProducto { get; set; }
+        public int TipoProductoId { get; set; }
         public string NombreTipoProducto { get; set; }
         public byte[] RowVersion { get; set; }
     }

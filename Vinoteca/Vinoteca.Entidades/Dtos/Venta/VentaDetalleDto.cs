@@ -9,7 +9,7 @@ namespace Vinoteca.Entidades.Dtos.Venta
 {
      public class VentaDetalleDto
     {
-        public VentaListDto venta { get; set; }
-        public List<VentaProductoListDto> ventaProducto { get; set; }
+        public VentaListDto Venta { get; set; }
+        public List<VentaProductoListDto> VentaProducto { get; set; }
     }
 }
