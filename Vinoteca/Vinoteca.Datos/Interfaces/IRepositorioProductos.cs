@@ -20,5 +20,6 @@ namespace Vinoteca.Datos.Interfaces
         List<ProductoListDto> GetProductos(int categoriaId);
         List<ProductoListDto> Filtrar(Func<Producto, bool> predicado);
         void ActualizarStock(int productoId, int cantidad);
+        int GetCantidad();
     }
 }
