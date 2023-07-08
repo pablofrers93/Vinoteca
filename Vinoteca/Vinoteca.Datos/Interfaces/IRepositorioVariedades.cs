@@ -10,7 +10,7 @@ namespace Vinoteca.Datos.Interfaces
 {
     public interface IRepositorioVariedades
     {
-        List<Variedad> GetVariedads();
+        List<Variedad> GetVariedades();
         void Agregar(Variedad variedad);
         void Editar(Variedad variedad);
         void Borrar(int id);
