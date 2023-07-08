@@ -19,6 +19,6 @@ namespace Vinoteca.Datos.Interfaces
         bool EstaRelacionado(Bodega bodega);
         List<Bodega> GetBodegasPorPagina(int cantidad, int pagina);
         int GetCantidad();
-        List<SelectListItem> GetBodegassDropDownList();
+        List<SelectListItem> GetBodegasDropDownList();
     }
 }

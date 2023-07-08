@@ -13,21 +13,21 @@ namespace Vinoteca.Datos.Repositorios
 {
     public class RepositorioBodegas : IRepositorioBodegas
     {
-        private readonly VinotecaDbContext _context
+        private readonly VinotecaDbContext _context;
         public RepositorioBodegas(VinotecaDbContext context)
         {
             _context = context;
         }
         public void Agregar(Bodega bodega)
         {
-            _context.Bodegas.Add(bodega)
+            _context.Bodegas.Add(bodega);
         }
 
         public void Borrar(int id)
         {
             try
             {
-                var bodegaInDb = _context.Bodegas.SingleOrDefault(p => p.IdBodega == id);
+                var bodegaInDb = _context.Bodegas.SingleOrDefault(p => p.BodegaId == id);
                 if (bodegaInDb == null)
                 {
                     Exception ex = new Exception("Borrado por otro usuario");
@@ -45,7 +45,7 @@ namespace Vinoteca.Datos.Repositorios
         {
             try
             {
-                var bodegaInDb = _context.Bodegas.SingleOrDefault(c => c.IdBodega == bodega.IdBodega);
+                var bodegaInDb = _context.Bodegas.SingleOrDefault(c => c.BodegaId == bodega.BodegaId);
                 if (bodegaInDb == null)
                 {
                     throw new Exception("Borrado por otro usuario");
@@ -65,7 +65,7 @@ namespace Vinoteca.Datos.Repositorios
         {
             try
             {
-                return _context.Bodegas.Any(c => c.IdBodega == bodega.IdBodega);
+                return _context.Bodegas.Any(c => c.BodegaId == bodega.BodegaId);
             }
             catch (Exception)
             {
@@ -77,11 +77,11 @@ namespace Vinoteca.Datos.Repositorios
         {
             try
             {
-                if (bodega.IdBodega == 0)
+                if (bodega.BodegaId == 0)
                 {
                     return _context.Bodegas.Any(p => p.NombreBodega == bodega.NombreBodega);
                 }
-                return _context.Bodegas.Any(p => p.NombreBodega == bodega.NombreBodega && p.IdBodega != bodega.IdBodega);
+                return _context.Bodegas.Any(p => p.NombreBodega == bodega.NombreBodega && p.BodegaId != bodega.BodegaId);
             }
             catch (Exception)
             {
@@ -94,7 +94,7 @@ namespace Vinoteca.Datos.Repositorios
             try
             {
                 var bodegaInDb = _context.Bodegas
-                    .SingleOrDefault(b => b.IdBodega == bodegaId); 
+                    .SingleOrDefault(b => b.BodegaId == bodegaId); 
                 return bodegaInDb;
             }
             catch (Exception)
@@ -131,7 +131,7 @@ namespace Vinoteca.Datos.Repositorios
             var dropDown = lista.Select(b => new SelectListItem
             {
                 Text = b.NombreBodega,
-                Value = b.IdBodega.ToString()
+                Value = b.BodegaId.ToString()
             }).ToList();
             return dropDown;
         }
@@ -140,5 +140,6 @@ namespace Vinoteca.Datos.Repositorios
         {
             return _context.Bodegas.Count();
         }
+
     }
 }
