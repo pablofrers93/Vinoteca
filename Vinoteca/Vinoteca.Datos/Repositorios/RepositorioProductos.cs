@@ -119,5 +119,12 @@ namespace Vinoteca.Datos.Repositorios
         {
             return _context.Productos.Count();
         }
+
+        public void ActualizarUnidadesEnPedido(int productoId, int cantidad)
+        {
+            var productoInDb = _context.Productos.SingleOrDefault(p => p.ProductoId == productoId);
+            productoInDb.UnidadesEnPedido += cantidad;
+            _context.Entry(productoInDb).State = EntityState.Modified;
+        }
     }
 }

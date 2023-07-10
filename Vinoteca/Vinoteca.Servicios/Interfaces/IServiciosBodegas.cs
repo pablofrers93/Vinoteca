@@ -20,6 +20,5 @@ namespace Vinoteca.Servicios.Interfaces
         int GetCantidad();
         List<Bodega> GetBodegasPorPagina(int cantidad, int pagina);
         int GetCantidad(Func<Bodega, bool> predicado);
-        List<SelectListItem> GetBodegasDropDownList(int paisId);
     }
 }

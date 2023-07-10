@@ -17,10 +17,12 @@ namespace Vinoteca.Entidades.Entidades
         public string FichaTecnica { get; set; }
         public int BodegaId { get; set; }
         public int Stock { get; set; }
+        public int UnidadesEnPedido { get; set; }
         public byte[] RowVersion { get; set; }
 
         public Variedad Variedad { get; set; }
         public TipoProducto TipoProducto { get; set; }
         public Bodega Bodega { get; set; }
+        
     }
 }

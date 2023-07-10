@@ -16,7 +16,7 @@ namespace Vinoteca.Servicios.Interfaces
         bool Existe(Producto producto);
         Producto GetProductoPorId(int id);
         List<ProductoListDto> GetProductos();
-        List<ProductoListDto> GetProductos(int categoriaId);
+        List<ProductoListDto> GetProductos(int variedadId);
         List<ProductoListDto> Filtrar(Func<Producto, bool> predicado);
         void ActualizarUnidadesEnPedido(int productoId, int cantidad);
         int GetCantidad();
