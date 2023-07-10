@@ -15,7 +15,6 @@ namespace Vinoteca.Servicios.Interfaces
         bool Existe(Usuario usuario);
         Usuario GetUsuarioPorId(int id);
         List<UsuarioListDto> GetUsuarios();
-        List<UsuarioListDto> GetUsuarios(int paisId, int ciudadId);
         void Guardar(Usuario usuario);
         List<UsuarioListDto> Filtrar(Func<Usuario, bool> predicado);
         int GetCantidad();
