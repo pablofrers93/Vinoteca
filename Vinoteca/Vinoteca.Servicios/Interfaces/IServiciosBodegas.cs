@@ -4,24 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using Vinoteca.Entidades.Dtos.Producto;
 using Vinoteca.Entidades.Entidades;
 
-namespace Vinoteca.Datos.Interfaces
+namespace Vinoteca.Servicios.Interfaces
 {
-    public interface IRepositorioBodegas
+    public interface IServiciosBodegas
     {
         List<Bodega> GetBodegas();
-        void Agregar(Bodega bodega);
-        void Editar(Bodega bodega);
-        void Borrar(int id);
         bool Existe(Bodega bodega);
-        Bodega GetBodegaPorId(int bodegaId);
-        List<Bodega> Filtrar(Func<Bodega, bool> predicado, int cantidad, int pagina);
+        void Guardar(Bodega bodega);
         bool EstaRelacionada(Bodega bodega);
-        List<Bodega> GetBodegasPorPagina(int cantidad, int pagina);
+        Bodega GetBodegaPorId(int bodegaId);
+        void Borrar(int bodegaId);
+        List<Bodega> Filtrar(Func<Bodega, bool> predicado, int cantidad, int pagina);
         int GetCantidad();
+        List<Bodega> GetBodegasPorPagina(int cantidad, int pagina);
         int GetCantidad(Func<Bodega, bool> predicado);
-        List<SelectListItem> GetBodegasDropDownList();
+        List<SelectListItem> GetBodegasDropDownList(int paisId);
     }
 }

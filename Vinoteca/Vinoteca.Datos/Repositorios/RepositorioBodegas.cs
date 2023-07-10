@@ -61,7 +61,7 @@ namespace Vinoteca.Datos.Repositorios
             }
         }
 
-        public bool EstaRelacionado(Bodega bodega)
+        public bool EstaRelacionada(Bodega bodega)
         {
             try
             {
@@ -141,5 +141,25 @@ namespace Vinoteca.Datos.Repositorios
             return _context.Bodegas.Count();
         }
 
+        public List<Bodega> Filtrar(Func<Bodega, bool> predicado, int cantidad, int pagina)
+        {
+            return _context.Bodegas
+                .Where(predicado)
+                .OrderBy(c => c.NombreBodega)
+                .Skip(cantidad * (pagina - 1))
+                .Take(cantidad)
+                .Select(c => new Bodega
+                {
+                    BodegaId = c.BodegaId,
+                    NombreBodega = c.NombreBodega,
+                    Direccion = c.Direccion
+
+                }).ToList();
+        }
+
+        public int GetCantidad(Func<Bodega, bool> predicado)
+        {
+            return _context.Bodegas.Count(predicado);
+        }
     }
 }

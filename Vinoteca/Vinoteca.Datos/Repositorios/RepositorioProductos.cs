@@ -48,11 +48,11 @@ namespace Vinoteca.Datos.Repositorios
                 throw new Exception("Producto borrado por otro usuario");
             }
             productoInDb.Descripcion = producto.Descripcion;
-            productoInDb.IdVariedad = producto.IdVariedad;
-            productoInDb.IdTipoProducto = producto.IdTipoProducto;
+            productoInDb.VariedadId = producto.VariedadId;
+            productoInDb.TipoProductoId = producto.TipoProductoId;
             productoInDb.PrecioVenta = producto.PrecioVenta;
             productoInDb.FichaTecnica = producto.FichaTecnica;
-            productoInDb.IdBodega = producto.IdBodega;
+            productoInDb.BodegaId = producto.BodegaId;
             productoInDb.Stock = producto.Stock;
         }
 
@@ -66,10 +66,10 @@ namespace Vinoteca.Datos.Repositorios
             if (producto.ProductoId == 0)
             {
                 return _context.Productos.Any(p => p.Descripcion == producto.Descripcion &&
-                p.IdVariedad == producto.IdVariedad);
+                p.VariedadId == producto.VariedadId);
             }
             return _context.Productos.Any(p => p.Descripcion == producto.Descripcion &&
-                p.IdVariedad == producto.IdVariedad && p.ProductoId != producto.ProductoId);
+                p.VariedadId == producto.VariedadId && p.ProductoId != producto.ProductoId);
         }
 
         public List<ProductoListDto> Filtrar(Func<Producto, bool> predicado)
@@ -102,7 +102,7 @@ namespace Vinoteca.Datos.Repositorios
         public List<ProductoListDto> GetProductos(int variedadId)
         {
             return _context.Productos.Include(p => p.Variedad)
-                .Where(p => p.IdVariedad == variedadId)
+                .Where(p => p.VariedadId == variedadId)
                 .Select(p => new ProductoListDto()
                 {
                     ProductoId = p.ProductoId,
