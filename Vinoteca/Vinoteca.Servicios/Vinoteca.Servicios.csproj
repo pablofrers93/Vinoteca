@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Vinoteca.Servicios</RootNamespace>
     <AssemblyName>Vinoteca.Servicios</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -77,7 +78,6 @@
     <Compile Include="Servicios\ServiciosUsuarios.cs" />
     <Compile Include="Servicios\ServiciosVariedades.cs" />
     <Compile Include="Servicios\ServiciosVentas.cs" />
-    <Compile Include="Servicios\ServiciosVentasProductos.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
