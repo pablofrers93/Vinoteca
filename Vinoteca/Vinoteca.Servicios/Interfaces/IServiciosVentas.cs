@@ -11,10 +11,10 @@ namespace Vinoteca.Servicios.Interfaces
 {
     public interface IServiciosVentas
     {
-        List<VentaProductoListDto> GetDetalleVenta(int ventaId);
+        List<VentaProductoListDto> GetVentaProducto(int ventaId);
         List<VentaListDto> GetVentas();
         void Guardar(Venta venta);
         int GetCantidad();
-        VentaListDto GetVentasPorId(int value);
+        VentaListDto GetVentasPorId(int id);
     }
 }
