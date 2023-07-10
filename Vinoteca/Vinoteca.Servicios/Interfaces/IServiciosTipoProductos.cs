@@ -12,13 +12,12 @@ namespace Vinoteca.Servicios.Interfaces
     {
         List<TipoProducto> GetTipoProductos();
         void Agregar(TipoProducto tipoProducto);
-        void Editar(TipoProducto tipoProducto);
         void Borrar(int id);
         bool Existe(TipoProducto tipoProducto);
         TipoProducto GetTipoProductoPorId(int tipoProductoId);
         bool EstaRelacionado(TipoProducto tipoProducto);
         List<TipoProducto> GetTipoProductosPorPagina(int cantidad, int pagina);
-        int GetCantidad();
         List<SelectListItem> GetTipoProductosDropDownList();
+        int GetCantidad();
     }
 }
