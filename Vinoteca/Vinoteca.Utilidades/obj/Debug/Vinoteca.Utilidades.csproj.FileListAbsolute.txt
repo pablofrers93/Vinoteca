@@ -1,0 +1,6 @@
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Utilidades\bin\Debug\Vinoteca.Utilidades.dll
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Utilidades\bin\Debug\Vinoteca.Utilidades.pdb
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Utilidades\obj\Debug\Vinoteca.Utilidades.csproj.AssemblyReference.cache
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Utilidades\obj\Debug\Vinoteca.Utilidades.csproj.CoreCompileInputs.cache
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Utilidades\obj\Debug\Vinoteca.Utilidades.dll
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Utilidades\obj\Debug\Vinoteca.Utilidades.pdb

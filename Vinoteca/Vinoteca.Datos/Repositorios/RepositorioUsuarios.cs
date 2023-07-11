@@ -90,7 +90,7 @@ namespace Vinoteca.Datos.Repositorios
 
         public int GetCantidad()
         {
-            return _context.Clientes.Count();
+            return _context.Usuarios.Count();
         }
 
         public Usuario GetUsuarioPorId(int id)
