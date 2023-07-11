@@ -10,7 +10,7 @@ namespace Vinoteca.Servicios.Interfaces
 {
     public interface IServiciosVariedades
     {
-        List<Variedad> GetVariedads();
+        List<Variedad> GetVariedades();
         void Guardar(Variedad variedad);
         void Borrar(int id);
         bool Existe(Variedad variedad);
@@ -18,6 +18,6 @@ namespace Vinoteca.Servicios.Interfaces
         bool EstaRelacionado(Variedad variedad);
         List<Variedad> GetVariedadesPorPagina(int cantidad, int pagina);
         int GetCantidad();
-        List<SelectListItem> GetVariedadsDropDownList();
+        List<SelectListItem> GetVariedadesDropDownList();
     }
 }

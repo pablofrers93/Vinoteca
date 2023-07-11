@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Vinoteca.Web.ViewModels.Variedad.VariedadListVm>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="d-flex justify-content-between w-75">
+    <h2>Lista de Variedades</h2>
+    <p>
+        @Html.ActionLink("Nueva", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+</div>
+
+<table class="border-0 table table-bordered table-hover table-dark w-75">
+    <tr>
+        <th class="w-50">
+            @Html.DisplayNameFor(model => model.NombreVariedad)
+        </th>
+
+        <th class="w-50">Acciones</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreVariedad)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.VariedadId }, new { @class = "btn btn-sm btn btn-warning" }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.VariedadId }, new { @class = "btn btn-sm btn btn-info" })|
+                @Html.ActionLink("Borrar", "Delete", new { id = item.VariedadId }, new { @class = "btn btn-sm btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+

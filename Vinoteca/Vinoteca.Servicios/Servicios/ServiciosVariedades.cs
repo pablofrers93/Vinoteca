@@ -96,7 +96,7 @@ namespace Vinoteca.Servicios.Servicios
             }
         }
 
-        public List<Variedad> GetVariedads()
+        public List<Variedad> GetVariedades()
         {
             try
             {
@@ -109,7 +109,7 @@ namespace Vinoteca.Servicios.Servicios
             }
         }
 
-        public List<SelectListItem> GetVariedadsDropDownList()
+        public List<SelectListItem> GetVariedadesDropDownList()
         {
             try
             {
