@@ -11,7 +11,6 @@ namespace Vinoteca.Entidades.Entidades
         public int VentaId { get; set; }
         public int UsuarioId { get; set; }
         public DateTime Fecha { get; set; }
-        public int Numero { get; set; }
         public bool Anulado { get; set; }
         public decimal Importe { get; set; }
         public Usuario Usuario { get; set; }

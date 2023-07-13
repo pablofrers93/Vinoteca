@@ -43,7 +43,6 @@ namespace Vinoteca.Datos.Repositorios
                     Usuario = v.Usuario.Nombre,
                     Importe = v.Importe,
                     Anulado = v.Anulado,
-                    Numero = v.Numero
                 }).SingleOrDefault(v => v.VentaId == id);
         }
 
@@ -59,7 +58,6 @@ namespace Vinoteca.Datos.Repositorios
                     Usuario = v.Usuario.Nombre,
                     Importe = v.Importe,
                     Anulado = v.Anulado,
-                    Numero = v.Numero
                 }).ToList();
         }
     }

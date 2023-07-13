@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace Vinoteca.Entidades.Dtos.Venta
+namespace Vinoteca.Web.ViewModels.Venta
 {
-    public class VentaListDto
+    public class VentaListVm
     {
+        [DisplayName("N° Venta")]
         public int VentaId { get; set; }
         public string Usuario { get; set; }
         public DateTime Fecha { get; set; }
