@@ -10,5 +10,8 @@ namespace Vinoteca.Utilidades
     {
         public const string Vinoteca = "~/Content/Imagenes/Vinoteca.jpg";
         public const string LogoVinoteca = "~/Content/Imagenes/Compartidas/logo_vinoteca.jpg";
+        public const string CarrouselImg1 = "~/Content/Imagenes/Carrousel/img_carrousel1.jpg";
+        public const string CarrouselImg2 = "~/Content/Imagenes/Carrousel/img_carrousel2.jpg";
+        public const string CarrouselImg3 = "~/Content/Imagenes/Carrousel/img_carrousel3.jpg";
     }
 }
