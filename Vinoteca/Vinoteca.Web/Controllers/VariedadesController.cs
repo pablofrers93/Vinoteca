@@ -28,8 +28,8 @@ namespace Vinoteca.Web.Controllers
             var listaVm = new List<VariedadListVm>();
             foreach (var item in lista)
             {
-                var categoriaVm = GetVariedadListVm(item);
-                listaVm.Add(categoriaVm);
+                var variedadVm = GetVariedadListVm(item);
+                listaVm.Add(variedadVm);
             }
             return listaVm;
         }
