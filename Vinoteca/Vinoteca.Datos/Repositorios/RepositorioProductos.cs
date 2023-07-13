@@ -92,10 +92,9 @@ namespace Vinoteca.Datos.Repositorios
                     Descripcion = p.Descripcion,
                     Variedad = p.Variedad.NombreVariedad,
                     PrecioVenta = p.PrecioVenta,
-                    TipoProducto = p.TipoProducto.NombreTipoProducto,
-                    FichaTecnica = p.FichaTecnica,
                     Bodega = p.Bodega.NombreBodega,
-                    Stock = p.Stock    
+                    Stock = p.Stock,
+                    Imagen = p.Imagen
                 }).ToList();
         }
 
@@ -109,10 +108,9 @@ namespace Vinoteca.Datos.Repositorios
                     Descripcion = p.Descripcion,
                     Variedad = p.Variedad.NombreVariedad,
                     PrecioVenta = p.PrecioVenta,
-                    TipoProducto = p.TipoProducto.NombreTipoProducto,
-                    FichaTecnica = p.FichaTecnica,
                     Bodega = p.Bodega.NombreBodega,
-                    Stock = p.Stock
+                    Stock = p.Stock,
+                    UnidadesDisponibles = p.Stock - p.UnidadesEnPedido
                 }).ToList();
         }
         public int GetCantidad()

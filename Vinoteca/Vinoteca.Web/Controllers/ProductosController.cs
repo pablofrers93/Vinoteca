@@ -1,11 +1,9 @@
 ﻿using AutoMapper;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Vinoteca.Servicios.Interfaces;
 using Vinoteca.Web.App_Start;
+using Vinoteca.Web.ViewModels.Producto;
 
 namespace Vinoteca.Web.Controllers
 {

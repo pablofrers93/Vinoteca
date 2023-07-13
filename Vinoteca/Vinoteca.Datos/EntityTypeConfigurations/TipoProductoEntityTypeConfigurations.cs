@@ -13,6 +13,7 @@ namespace Vinoteca.Datos.EntityTypeConfigurations
         public TipoProductoEntityTypeConfigurations()
         {
             ToTable("TipoProductos");
+            Property(r => r.NombreTipoProducto).HasColumnName("TipoProducto");
             Property(r => r.RowVersion).IsRowVersion().IsConcurrencyToken();
         }
     }
