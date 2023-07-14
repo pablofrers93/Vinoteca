@@ -256,6 +256,7 @@
     <Content Include="Views\Bodegas\Index.cshtml" />
     <Content Include="Views\Ventas\Index.cshtml" />
     <Content Include="Views\Productos\Create.cshtml" />
+    <Content Include="Views\Shared\_MostrarProducto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

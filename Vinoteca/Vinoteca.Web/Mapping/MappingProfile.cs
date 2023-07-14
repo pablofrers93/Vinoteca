@@ -29,6 +29,7 @@ namespace Vinoteca.Web.Mapping
         private void LoadProductosMapping()
         {
             CreateMap<ProductoListDto, ProductoListVm>();
+            CreateMap<ProductoEditVm, Producto>().ReverseMap();
             CreateMap<Producto, ProductoListVm>()
                 .ForMember(dest => dest.Variedad,
                 opt => opt.MapFrom(src => src.Variedad.NombreVariedad));
