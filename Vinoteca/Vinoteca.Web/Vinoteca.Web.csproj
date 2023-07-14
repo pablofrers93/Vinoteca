@@ -176,6 +176,7 @@
     <Compile Include="Models\ApplicationDbInitializer.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Producto\ProductoEditVm.cs" />
     <Compile Include="ViewModels\Producto\ProductoListVm.cs" />
     <Compile Include="ViewModels\Variedad\VariedadEditVm.cs" />
     <Compile Include="ViewModels\Variedad\VariedadListVm.cs" />
@@ -214,6 +215,7 @@
     <Content Include="Content\Imagenes\Carrousel\8d6b1d18-67dd-4e7c-a3db-4aabc301e18a.jpg" />
     <Content Include="Content\Imagenes\Carrousel\98acab6a-a510-4b99-af81-12842f85b751.jpg" />
     <Content Include="Content\Imagenes\Carrousel\cba7d280-2f23-4f6f-97d5-a8b0918bf816.jpg" />
+    <Content Include="Content\Imagenes\Compartidas\logo2.jpg" />
     <Content Include="Content\Imagenes\Compartidas\logo_vinoteca.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />

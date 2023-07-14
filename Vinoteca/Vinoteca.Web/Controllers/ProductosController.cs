@@ -33,5 +33,9 @@ namespace Vinoteca.Web.Controllers
             var listaVm = _mapper.Map<List<ProductoListVm>>(lista);
             return View(listaVm);
         }
+        public ActionResult Create()
+        {
+
+        }
     }
 }
