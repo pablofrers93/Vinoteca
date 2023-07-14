@@ -106,6 +106,17 @@ namespace Vinoteca.Servicios.Servicios
                 throw;
             }
         }
+        public List<SelectListItem> GetBodegasDropDownList()
+        {
+            try
+            {
+                return _repositorioBodegas.GetBodegasDropDownList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
         public int GetCantidad()
         {

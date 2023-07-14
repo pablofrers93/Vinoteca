@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using Vinoteca.Datos.Interfaces;
 using Vinoteca.Entidades.Dtos.Producto;
+using Vinoteca.Entidades.Dtos.TipoProductos;
 using Vinoteca.Entidades.Entidades;
 
 namespace Vinoteca.Datos.Repositorios
@@ -75,10 +76,10 @@ namespace Vinoteca.Datos.Repositorios
             throw new NotImplementedException();
         }
 
-        public List<TipoProducto> GetTipoProductos()
+        public List<TipoProductoListDto> GetTipoProductos()
         {
             return _context.TipoProductos
-                .Select(p => new TipoProducto()
+                .Select(p => new TipoProductoListDto()
                 {
                     TipoProductoId = p.TipoProductoId,
                     NombreTipoProducto = p.NombreTipoProducto

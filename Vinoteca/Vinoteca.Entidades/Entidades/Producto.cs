@@ -18,6 +18,7 @@ namespace Vinoteca.Entidades.Entidades
         public int BodegaId { get; set; }
         public bool Suspendido { get; set; }
         public int UnidadesEnPedido { get; set; }
+        public int Stock { get; set; }
         public string Imagen { get; set; }
         public byte[] RowVersion { get; set; }
 

@@ -18,6 +18,7 @@ namespace Vinoteca.Servicios.Interfaces
         void Borrar(int bodegaId);
         List<Bodega> Filtrar(Func<Bodega, bool> predicado, int cantidad, int pagina);
         int GetCantidad();
+        List<SelectListItem> GetBodegasDropDownList();
         List<Bodega> GetBodegasPorPagina(int cantidad, int pagina);
         int GetCantidad(Func<Bodega, bool> predicado);
     }

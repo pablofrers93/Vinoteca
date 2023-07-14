@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using Vinoteca.Datos;
 using Vinoteca.Datos.Repositorios;
+using Vinoteca.Entidades.Dtos.TipoProductos;
 using Vinoteca.Entidades.Entidades;
 using Vinoteca.Servicios.Interfaces;
 
@@ -101,7 +102,7 @@ namespace Vinoteca.Servicios.Servicios
             }
         }
 
-        public List<TipoProducto> GetTipoProductos()
+        public List<TipoProductoListDto> GetTipoProductos()
         {
             try
             {

@@ -35,7 +35,13 @@ namespace Vinoteca.Web.Controllers
         }
         public ActionResult Create()
         {
-
+            var productoVm = new ProductoEditVm
+            {
+                Bodegas = _serviciosBodegas.GetBodegasDropDownList(),
+                Variedades = _serviciosVariedades.GetVariedadesDropDownList(),
+                TiposProductos = _serviciosTipoProductos.GetTipoProductosDropDownList()
+            };
+            return View(productoVm);
         }
     }
 }

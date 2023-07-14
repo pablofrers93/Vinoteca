@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using Vinoteca.Entidades.Dtos.TipoProductos;
 using Vinoteca.Entidades.Entidades;
 
 namespace Vinoteca.Servicios.Interfaces
 {
     public interface IServiciosTipoProductos
     {
-        List<TipoProducto> GetTipoProductos();
+        List<TipoProductoListDto> GetTipoProductos();
         void Agregar(TipoProducto tipoProducto);
         void Borrar(int id);
         bool Existe(TipoProducto tipoProducto);
