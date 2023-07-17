@@ -196,5 +196,19 @@ namespace Vinoteca.Web.Controllers
                 return View(productoVm);
             }
         }
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+            }
+            var producto = _servicios.GetProductoPorId(id.Value);
+            if (producto == null)
+            {
+                return HttpNotFound("Cód. producto inexistente!!!");
+            }
+            var productoVm = _mapper.Map<ProductoListVm>(producto);
+            return View(productoVm);
+        }
     }
 }
