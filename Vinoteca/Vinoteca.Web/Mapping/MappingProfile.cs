@@ -32,8 +32,9 @@ namespace Vinoteca.Web.Mapping
             CreateMap<ProductoEditVm, Producto>().ReverseMap();
             CreateMap<Producto, ProductoListVm>()
                 .ForMember(dest => dest.Variedad,
-                opt => opt.MapFrom(src => src.Variedad.NombreVariedad));
-            CreateMap<Producto, ProductoListVm>().ReverseMap();
+                opt => opt.MapFrom(src => src.Variedad.NombreVariedad))
+                .ForMember(dest => dest.Bodega,
+                opt => opt.MapFrom(src => src.Bodega.NombreBodega));
         }
 
         private void LoadVariedadesMapping()

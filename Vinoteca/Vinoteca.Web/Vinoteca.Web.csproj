@@ -217,6 +217,7 @@
     <Content Include="Content\Imagenes\Carrousel\cba7d280-2f23-4f6f-97d5-a8b0918bf816.jpg" />
     <Content Include="Content\Imagenes\Compartidas\logo2.jpg" />
     <Content Include="Content\Imagenes\Compartidas\logo_vinoteca.jpg" />
+    <Content Include="Content\Imagenes\Compartidas\SinImagenDisponible.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -257,9 +258,12 @@
     <Content Include="Views\Ventas\Index.cshtml" />
     <Content Include="Views\Productos\Create.cshtml" />
     <Content Include="Views\Shared\_MostrarProducto.cshtml" />
+    <Content Include="Views\Productos\Edit.cshtml" />
+    <Content Include="Views\Productos\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Imagenes\Productos\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

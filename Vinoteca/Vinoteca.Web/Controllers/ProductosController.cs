@@ -98,5 +98,103 @@ namespace Vinoteca.Web.Controllers
                 return View(productoVm);
             }
         }
+
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+            }
+            var producto = _servicios.GetProductoPorId(id.Value);
+            if (producto == null)
+            {
+                return HttpNotFound("Código de producto inexistente");
+            }
+            var productoVm = _mapper.Map<ProductoEditVm>(producto);
+            productoVm.Bodegas = _serviciosBodegas.GetBodegasDropDownList();
+            productoVm.Variedades = _serviciosVariedades.GetVariedadesDropDownList();
+            productoVm.TiposProductos = _serviciosTipoProductos.GetTipoProductosDropDownList();
+            return View (productoVm);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit (ProductoEditVm productoVm)
+        {
+            if (!ModelState.IsValid)
+            {
+                productoVm.Bodegas = _serviciosBodegas.GetBodegasDropDownList();
+                productoVm.Variedades = _serviciosVariedades.GetVariedadesDropDownList();
+                productoVm.TiposProductos = _serviciosTipoProductos.GetTipoProductosDropDownList();
+                return View(productoVm);
+            }
+            try
+            {
+                var producto = _mapper.Map<Producto>(productoVm);
+                if (!_servicios.Existe(producto))
+                {
+                    _servicios.Guardar(producto);
+                    TempData["Msg"] = "Registro editado satisfactoriamente";
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "¡Producto existente!");
+                    productoVm.Bodegas = _serviciosBodegas.GetBodegasDropDownList();
+                    productoVm.Variedades = _serviciosVariedades.GetVariedadesDropDownList();
+                    productoVm.TiposProductos = _serviciosTipoProductos.GetTipoProductosDropDownList();
+                    return View(productoVm);
+
+                }
+            }
+            catch (System.Exception)
+            {
+                ModelState.AddModelError(string.Empty, "¡Producto existente!");
+                productoVm.Bodegas = _serviciosBodegas.GetBodegasDropDownList();
+                productoVm.Variedades = _serviciosVariedades.GetVariedadesDropDownList();
+                productoVm.TiposProductos = _serviciosTipoProductos.GetTipoProductosDropDownList();
+                return View(productoVm);
+            }
+        }
+        public ActionResult Delete (int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+            }
+            var producto = _servicios.GetProductoPorId(id.Value);
+            if (producto == null)
+            {
+                return HttpNotFound("Código de producto inexistente");
+            }
+            var productoVm = _mapper.Map<ProductoListVm>(producto);
+            return View (productoVm);
+        }
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirm(int id)
+        {
+            var producto = _servicios.GetProductoPorId(id);
+            var productoVm = _mapper.Map<ProductoListVm>(producto);
+            try
+            {
+                if (!_servicios.EstaRelacionado(producto))
+                {
+                    _servicios.Borrar(id);
+                    TempData["Msg"] = "Producto borrado satisfactoriamente";
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Registro relacionado... Baja denegada");
+                    return View(productoVm);
+                }
+            }
+            catch (System.Exception)
+            {
+                ModelState.AddModelError(string.Empty, "Error al intengar borrar un proveedor");
+                return View(productoVm);
+            }
+        }
     }
 }
