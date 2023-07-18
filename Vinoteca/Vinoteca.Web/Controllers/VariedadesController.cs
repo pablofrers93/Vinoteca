@@ -42,5 +42,15 @@ namespace Vinoteca.Web.Controllers
                 RowVersion = item.RowVersion
             };
         }
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public Action Create(VariedadEditVm variedadVm)
+        {
+
+        }
     }
 }
