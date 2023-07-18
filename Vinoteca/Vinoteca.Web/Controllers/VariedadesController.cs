@@ -70,15 +70,7 @@ namespace Vinoteca.Web.Controllers
                 return View(variedadVm);
             }
         }
-        private Variedad GetVariedadFromVariedadEditVm(VariedadEditVm variedadEditVm)
-        {
-            return new Variedad()
-            {
-                VariedadId = variedadEditVm.VariedadId,
-                NombreVariedad = variedadEditVm.NombreVariedad,
-                RowVersion = variedadEditVm.RowVersion
-            };
-        }
+        
         public ActionResult Delete (int? id)
         {
             if (id==null)
@@ -107,6 +99,56 @@ namespace Vinoteca.Web.Controllers
             _servicio.Borrar(id);
             TempData["Msg"] = "Registro borrado satisfactoriamente";
             return RedirectToAction("Index");
+        }
+        public ActionResult Edit (int? id)
+        {
+            if (id==null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+            }
+            var variedad = _servicio.GetVariedadPorId(id.Value);
+            if (variedad == null)
+            {
+                return HttpNotFound("Código de variedad inexistente");
+            }
+            var variedadVm = GetVariedadEditVmFromVariedad(variedad);
+            return View(variedadVm);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit (VariedadEditVm variedadVm)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(variedadVm);
+            }
+            var variedad = GetVariedadFromVariedadEditVm(variedadVm);
+            if (_servicio.Existe(variedad))
+            {
+                ModelState.AddModelError(string.Empty, "Variedad existente");
+                return View (variedadVm);   
+            }
+            _servicio.Guardar(variedad);
+            TempData["Msg"] = "Registro editado satisfactoriamente";
+            return RedirectToAction("Index");   
+        }
+        private VariedadEditVm GetVariedadEditVmFromVariedad(Variedad variedad)
+        {
+            return new VariedadEditVm()
+            {
+                VariedadId = variedad.VariedadId,
+                NombreVariedad = variedad.NombreVariedad,
+                RowVersion = variedad.RowVersion
+            };
+        }
+        private Variedad GetVariedadFromVariedadEditVm(VariedadEditVm variedadEditVm)
+        {
+            return new Variedad()
+            {
+                VariedadId = variedadEditVm.VariedadId,
+                NombreVariedad = variedadEditVm.NombreVariedad,
+                RowVersion = variedadEditVm.RowVersion
+            };
         }
     }
 }

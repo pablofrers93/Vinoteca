@@ -128,7 +128,6 @@ namespace Vinoteca.Servicios.Servicios
                 if (variedad.VariedadId == 0)
                 {
                     _repositorio.Agregar(variedad);
-
                 }
                 else
                 {
