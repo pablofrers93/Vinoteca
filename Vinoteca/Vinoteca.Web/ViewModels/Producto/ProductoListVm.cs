@@ -15,6 +15,7 @@ namespace Vinoteca.Web.ViewModels.Producto
 
         [DisplayName("Precio")]
         public decimal PrecioVenta { get; set; }
+        [DisplayName("Unidades Disponibles")]
         public int UnidadesDisponibles { get; set; }
         public string Bodega { get; set; }
         public int Stock { get; set; }

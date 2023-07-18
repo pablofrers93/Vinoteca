@@ -4,7 +4,6 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 <div class="d-flex justify-content-between w-95">
     <h2>Lista de Ventas</h2>
     <p>
@@ -28,7 +27,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Importe)
         </th>
-        <th></th>
+        <th style="width:220px"> Acciones</th>
     </tr>
 
     @foreach (var item in Model)
@@ -50,7 +49,7 @@
                 @Html.DisplayFor(modelItem => item.Importe)
             </td>
             <td>
-                @Html.ActionLink("Editr", "Edit", new { id = item.VentaId }, new { @class = "btn btn-sm btn btn-warning" }) |
+                @Html.ActionLink("Editar", "Edit", new { id = item.VentaId }, new { @class = "btn btn-sm btn btn-warning" }) |
                 @Html.ActionLink("Detalles", "Details", new { id = item.VentaId }, new { @class = "btn btn-sm btn btn-info" })|
                 @Html.ActionLink("Borrar", "Delete", new { id = item.VentaId }, new { @class = "btn btn-sm btn btn-danger" })
             </td>
