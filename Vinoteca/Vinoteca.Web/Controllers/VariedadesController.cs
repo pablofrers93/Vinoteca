@@ -79,5 +79,34 @@ namespace Vinoteca.Web.Controllers
                 RowVersion = variedadEditVm.RowVersion
             };
         }
+        public ActionResult Delete (int? id)
+        {
+            if (id==null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+            }
+            var variedad = _servicio.GetVariedadPorId(id.Value);
+            if (variedad == null)
+            {
+                return HttpNotFound("Código de variedad inexistente");
+            }
+            var variedadVm = GetVariedadListVm(variedad);
+            return View(variedadVm);
+        }
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirm (int id)
+        {
+            var variedad = _servicio.GetVariedadPorId(id);
+            if (_servicio.EstaRelacionado(variedad))
+            {
+                var variedadVm = GetVariedadListVm(variedad);
+                ModelState.AddModelError(string.Empty, "Variedad relacionada, baja denegada");
+                return View(variedadVm);
+            }
+            _servicio.Borrar(id);
+            TempData["Msg"] = "Registro borrado satisfactoriamente";
+            return RedirectToAction("Index");
+        }
     }
 }
