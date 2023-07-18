@@ -16,7 +16,7 @@
             @Html.DisplayNameFor(model => model.NombreVariedad)
         </th>
 
-        <th style="width:220px">Acciones</th>
+        <th style="width:140px">Acciones</th>
     </tr>
 
     @foreach (var item in Model)
@@ -27,7 +27,6 @@
             </td>
             <td>
                 @Html.ActionLink("Editar", "Edit", new { id = item.VariedadId }, new { @class = "btn btn-sm btn btn-warning" }) |
-                @Html.ActionLink("Detalles", "Details", new { id = item.VariedadId }, new { @class = "btn btn-sm btn btn-info" })|
                 @Html.ActionLink("Borrar", "Delete", new { id = item.VariedadId }, new { @class = "btn btn-sm btn btn-danger" })
             </td>
         </tr>
