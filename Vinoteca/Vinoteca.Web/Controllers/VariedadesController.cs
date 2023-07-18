@@ -48,9 +48,36 @@ namespace Vinoteca.Web.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public Action Create(VariedadEditVm variedadVm)
+        public ActionResult Create(VariedadEditVm variedadVm)
         {
-
+            if (ModelState.IsValid)
+            {
+                var variedad = GetVariedadFromVariedadEditVm(variedadVm);
+                if (_servicio.Existe(variedad))
+                {
+                    ModelState.AddModelError(string.Empty, "Variedad Existente");
+                    return View(variedadVm);
+                }
+                else
+                {
+                    _servicio.Guardar(variedad);
+                    TempData["Msg"] = "Registro guardado satisfactoriamente";
+                    return RedirectToAction("Index");
+                }
+            }
+            else
+            {
+                return View(variedadVm);
+            }
+        }
+        private Variedad GetVariedadFromVariedadEditVm(VariedadEditVm variedadEditVm)
+        {
+            return new Variedad()
+            {
+                VariedadId = variedadEditVm.VariedadId,
+                NombreVariedad = variedadEditVm.NombreVariedad,
+                RowVersion = variedadEditVm.RowVersion
+            };
         }
     }
 }
