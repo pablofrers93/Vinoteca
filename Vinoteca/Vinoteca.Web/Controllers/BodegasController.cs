@@ -13,14 +13,14 @@ namespace Vinoteca.Web.Controllers
     public class BodegasController : Controller
     {
         // GET: Bodegas
-        private readonly IServiciosBodegas _servicios;
+        private readonly IServiciosBodegas _servicio;
         public BodegasController(IServiciosBodegas servicios)
         {
-            _servicios = servicios;
+            _servicio = servicios;
         }
         public ActionResult Index()
         {
-            var lista = _servicios.GetBodegas();
+            var lista = _servicio.GetBodegas();
             var listaVm = GetListaBodegasListVm(lista);
             return View(listaVm);
         }
@@ -44,6 +44,45 @@ namespace Vinoteca.Web.Controllers
                 NombreBodega = item.NombreBodega,
                 Direccion = item.Direccion,
                 RowVersion = item.RowVersion
+            };
+        }
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(BodegaListVm bodegaVm)
+        {
+            if (ModelState.IsValid)
+            {
+                var bodega = GetBodegaFromBodegaListVm(bodegaVm);
+                if (_servicio.Existe(bodega))
+                {
+                    ModelState.AddModelError(string.Empty, "Bodega Existente");
+                    return View(bodegaVm);
+                }
+                else
+                {
+                    _servicio.Guardar(bodega);
+                    TempData["Msg"] = "Registro guardado satisfactoriamente";
+                    return RedirectToAction("Index");
+                }
+            }
+            else
+            {
+                return View(bodegaVm);
+            }
+        }
+
+        private Bodega GetBodegaFromBodegaListVm(BodegaListVm bodegaVm)
+        {
+            return new Bodega
+            {
+                BodegaId = bodegaVm.BodegaId,
+                NombreBodega = bodegaVm.NombreBodega,
+                Direccion = bodegaVm.Direccion,
+                RowVersion = bodegaVm.RowVersion
             };
         }
     }

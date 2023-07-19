@@ -264,6 +264,7 @@
     <Content Include="Views\Variedades\Create.cshtml" />
     <Content Include="Views\Variedades\Delete.cshtml" />
     <Content Include="Views\Variedades\Edit.cshtml" />
+    <Content Include="Views\Bodegas\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
