@@ -85,5 +85,34 @@ namespace Vinoteca.Web.Controllers
                 RowVersion = bodegaVm.RowVersion
             };
         }
+        public ActionResult Delete (int? id)
+        {
+            if (id==null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+            }
+            var bodega = _servicio.GetBodegaPorId(id.Value);
+            if (bodega == null)
+            {
+                return HttpNotFound("Código de bodega inexistente");
+            }
+            var bodegaVm = GetBodegaListVm(bodega);
+            return View(bodegaVm);  
+        }
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirm (int id)
+        {
+            var bodega = _servicio.GetBodegaPorId(id);
+            if (_servicio.EstaRelacionada(bodega))
+            {
+                var bodegaVm = GetBodegaListVm(bodega);
+                ModelState.AddModelError(string.Empty, "Bodega relacionada, baja denegada.");
+                return View(bodegaVm);
+            }
+            _servicio.Borrar(id);
+            TempData["Msg"] = "Registro borrado satisfactoriamente";
+            return RedirectToAction("Index");   
+        }
     }
 }

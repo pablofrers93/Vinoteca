@@ -65,7 +65,7 @@ namespace Vinoteca.Datos.Repositorios
         {
             try
             {
-                return _context.Bodegas.Any(c => c.BodegaId == bodega.BodegaId);
+                return _context.Productos.Any(c => c.BodegaId == bodega.BodegaId);
             }
             catch (Exception)
             {
