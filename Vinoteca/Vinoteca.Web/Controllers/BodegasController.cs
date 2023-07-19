@@ -1,10 +1,14 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vinoteca.Entidades.Entidades;
 using Vinoteca.Servicios.Interfaces;
+using Vinoteca.Servicios.Servicios;
+using Vinoteca.Web.App_Start;
+using Vinoteca.Web.ViewModels.Producto;
 using Vinoteca.Web.ViewModels.Variedad;
 using Vinoteca.Web.Views.Bodegas;
 
@@ -14,9 +18,11 @@ namespace Vinoteca.Web.Controllers
     {
         // GET: Bodegas
         private readonly IServiciosBodegas _servicio;
+        private readonly IMapper _mapper;
         public BodegasController(IServiciosBodegas servicios)
         {
             _servicio = servicios;
+            _mapper = AutoMapperConfig.Mapper;
         }
         public ActionResult Index()
         {
@@ -85,9 +91,9 @@ namespace Vinoteca.Web.Controllers
                 RowVersion = bodegaVm.RowVersion
             };
         }
-        public ActionResult Delete (int? id)
+        public ActionResult Delete(int? id)
         {
-            if (id==null)
+            if (id == null)
             {
                 return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
             }
@@ -97,11 +103,11 @@ namespace Vinoteca.Web.Controllers
                 return HttpNotFound("Código de bodega inexistente");
             }
             var bodegaVm = GetBodegaListVm(bodega);
-            return View(bodegaVm);  
+            return View(bodegaVm);
         }
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirm (int id)
+        public ActionResult DeleteConfirm(int id)
         {
             var bodega = _servicio.GetBodegaPorId(id);
             if (_servicio.EstaRelacionada(bodega))
@@ -112,7 +118,64 @@ namespace Vinoteca.Web.Controllers
             }
             _servicio.Borrar(id);
             TempData["Msg"] = "Registro borrado satisfactoriamente";
-            return RedirectToAction("Index");   
+            return RedirectToAction("Index");
+        }
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+            }
+            var bodega = _servicio.GetBodegaPorId(id.Value);
+            if (bodega == null)
+            {
+                return HttpNotFound("Código de bodega inexistente");
+            }
+            var bodegaVm = _mapper.Map<BodegaListVm>(bodega);
+            return View(bodegaVm);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit (BodegaListVm bodegaVm)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(bodegaVm);
+            }
+            try
+            {
+                var bodega = _mapper.Map<Bodega>(bodegaVm);
+                if (!_servicio.Existe(bodega))
+                {
+                    _servicio.Guardar(bodega);
+                    TempData["Msg"] = "Registro editado satisfactoriamente";
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "¡Bodega existente!");
+                    return View(bodegaVm);
+                }
+            }
+            catch (System.Exception)
+            {
+                ModelState.AddModelError(string.Empty, "¡Bodega existente!");
+                return View(bodegaVm);
+            }
+        }
+        public ActionResult Details (int? id )
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+            }
+            var bodega = _servicio.GetBodegaPorId(id.Value);
+            if (bodega == null)
+            {
+                return HttpNotFound("Código de bodega inexistente");
+            }
+            var bodegaVm = _mapper.Map<BodegaListVm>(bodega);
+            return View(bodegaVm);
         }
     }
 }

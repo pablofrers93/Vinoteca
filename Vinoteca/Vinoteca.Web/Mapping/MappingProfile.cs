@@ -9,6 +9,7 @@ using Vinoteca.Entidades.Entidades;
 using Vinoteca.Web.ViewModels.Producto;
 using Vinoteca.Web.ViewModels.Variedad;
 using Vinoteca.Web.ViewModels.Venta;
+using Vinoteca.Web.Views.Bodegas;
 
 namespace Vinoteca.Web.Mapping
 {
@@ -19,6 +20,12 @@ namespace Vinoteca.Web.Mapping
             LoadVariedadesMapping();
             LoadProductosMapping();
             LoadVentasMapping();
+            LoadBodegasMapping();
+        }
+
+        private void LoadBodegasMapping()
+        {
+            CreateMap<Bodega, BodegaListVm>().ReverseMap();
         }
 
         private void LoadVentasMapping()

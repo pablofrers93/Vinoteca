@@ -1,18 +1,20 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeTQmuim0yo13wC_RZscH4zGN0ZSBl_JE&callback=initMap" defer></script>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
         <div class="container">
-            <div style="margin-right:1em" >
-                <img class="d-block mx-auto mb-1 mt-1" src="@Url.Content(Vinoteca.Utilidades.WC.Logo2)" alt="" width="80" height="80" style="border-radius:30px" >
+            <div style="margin-right:1em">
+                <img class="d-block mx-auto mb-1 mt-1" src="@Url.Content(Vinoteca.Utilidades.WC.Logo2)" alt="" width="80" height="80" style="border-radius:30px">
             </div>
             @Html.ActionLink("Vinoteca Ramón", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent"
@@ -34,6 +36,7 @@
         </div>
     </nav>
     <div class="container body-content">
+        @Html.Partial("_Notification")
         @RenderBody()
         <hr />
         <footer>
@@ -44,5 +47,6 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+        
 </body>
 </html>
