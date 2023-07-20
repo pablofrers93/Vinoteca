@@ -1,4 +1,4 @@
-﻿@model Vinoteca.Web.Views.Bodegas.BodegaListVm
+﻿﻿@model Vinoteca.Web.Views.Bodegas.BodegaListVm
 
 @{
     ViewBag.Title = "Details";
@@ -7,39 +7,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <body>
-    <script>
-        function initMap() {
-            console.log("initMap called");
-            var direccionBodega = ("@ViewBag.Direccion");
 
-            var geocoder = new google.maps.Geocoder();
-
-            geocoder.geocode({ address: direccionBodega }, function (results, status) {
-                if (status === google.maps.GeocoderStatus.OK) {
-                    var latlng = results[0].geometry.location;
-
-                    var mapOptions = {
-                        center: latlng,
-                        zoom: 15
-                    };
-
-                    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
-                    var marker = new google.maps.Marker({
-                        position: latlng,
-                        map: map,
-                        title: "Ubicación de la bodega"
-                    });
-                } else {
-                    alert("La geocodificación de la dirección no tuvo éxito debido a: " + status);
-                }
-            });
-        }
-    </script>
     <h2>Detalles Bodega</h2>
 
-    <div id="map" style="height: 400px; width: 100%;"></div>
-
+    <div id="map" style="height: 400px; width: 100%;" data-direccion="@Html.Raw(Model.Direccion)"></div>
 
     <div>
         <dl class="dl-horizontal">
@@ -60,4 +31,7 @@
     <p>
         @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-success" })
     </p>
+    @section Scripts {
+        <script src="~/bundles/googleMaps"></script>
+    }
 </body>
