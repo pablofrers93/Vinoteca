@@ -1,13 +1,17 @@
 ﻿using AutoMapper;
+using PagedList;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.IO;
 using System.Web.Mvc;
+using System.Web.UI;
 using Vinoteca.Entidades.Entidades;
 using Vinoteca.Servicios.Interfaces;
 using Vinoteca.Utilidades;
 using Vinoteca.Web.App_Start;
 using Vinoteca.Web.ViewModels.Producto;
+using Vinoteca.Web.ViewModels.Variedad;
 
 namespace Vinoteca.Web.Controllers
 {
@@ -31,11 +35,15 @@ namespace Vinoteca.Web.Controllers
             _mapper = AutoMapperConfig.Mapper;
         }
         // GET: Productos
-        public ActionResult Index()
+        public ActionResult Index(int? page, int? pageSize)
         {
             var lista = _servicios.GetProductos();
             var listaVm = _mapper.Map<List<ProductoListVm>>(lista);
-            return View(listaVm);
+            page = page ?? 1;
+            pageSize = pageSize ?? 10;
+            ViewBag.PageSize = pageSize;
+
+            return View(listaVm.ToPagedList(page.Value, pageSize.Value));
         }
         public ActionResult Create()
         {

@@ -27,11 +27,8 @@ namespace Vinoteca.Web.Controllers
         public ActionResult Index(int? page, int? pageSize)
         {
             var lista = _servicio.GetVariedades();
-            //var lista = new List<Categoria>();
-            //var listaVm=GetListaPaisesLstVm(lista);
             var listaVm = _mapper.Map<List<VariedadListVm>>(lista);
-            //listaVm.ForEach(c => c.CantidadVariedades = _servicio
-            //        .GetCantidad(p => p.VariedadId == c.VariedadId));
+
             page = page ?? 1;
             pageSize = pageSize ?? 10;
             ViewBag.PageSize = pageSize;
