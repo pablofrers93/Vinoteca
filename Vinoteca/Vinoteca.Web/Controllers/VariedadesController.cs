@@ -1,10 +1,15 @@
-﻿using System;
+﻿using AutoMapper;
+using PagedList;
+using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 using Vinoteca.Entidades.Entidades;
 using Vinoteca.Servicios.Interfaces;
+using Vinoteca.Web.App_Start;
 using Vinoteca.Web.ViewModels.Variedad;
 
 namespace Vinoteca.Web.Controllers
@@ -13,26 +18,42 @@ namespace Vinoteca.Web.Controllers
     {
         // GET: Variedades
         private readonly IServiciosVariedades _servicio;
+        private readonly IMapper _mapper;
         public VariedadesController(IServiciosVariedades servicio)
         {
             _servicio = servicio;
+            _mapper = AutoMapperConfig.Mapper;
         }
-        public ActionResult Index()
+        public ActionResult Index(int? page, int? pageSize)
         {
             var lista = _servicio.GetVariedades();
-            var listaVm = GetListaVariedadesListVm(lista);
-            return View(listaVm);
+            //var lista = new List<Categoria>();
+            //var listaVm=GetListaPaisesLstVm(lista);
+            var listaVm = _mapper.Map<List<VariedadListVm>>(lista);
+            //listaVm.ForEach(c => c.CantidadVariedades = _servicio
+            //        .GetCantidad(p => p.VariedadId == c.VariedadId));
+            page = page ?? 1;
+            pageSize = pageSize ?? 10;
+            ViewBag.PageSize = pageSize;
+
+            return View(listaVm.ToPagedList(page.Value, pageSize.Value));
         }
-        private List<VariedadListVm> GetListaVariedadesListVm(List<Variedad> lista)
+
+        private IPagedList<VariedadListVm> GetListaVariedadesListVm(List<Variedad> lista, int? page, int pageSize)
         {
-            var listaVm = new List<VariedadListVm>();
-            foreach (var item in lista)
-            {
-                var variedadVm = GetVariedadListVm(item);
-                listaVm.Add(variedadVm);
-            }
-            return listaVm;
+            var variedadesVm = lista.Select(item => GetVariedadListVm(item)).ToList();
+            return new StaticPagedList<VariedadListVm>(variedadesVm, page ?? 1, pageSize, lista.Count);
         }
+        //private List<VariedadListVm> GetListaVariedadesListVm(List<Variedad> lista, int? page)
+        //{
+        //    var listaVm = new List<VariedadListVm>();
+        //    foreach (var item in lista)
+        //    {
+        //        var variedadVm = GetVariedadListVm(item);
+        //        listaVm.Add(variedadVm);
+        //    }
+        //    return listaVm;
+        //}
         private VariedadListVm GetVariedadListVm(Variedad item)
         {
             return new VariedadListVm()

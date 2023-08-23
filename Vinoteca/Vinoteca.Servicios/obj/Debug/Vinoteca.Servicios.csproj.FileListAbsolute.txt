@@ -1,8 +1,7 @@
-C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\obj\Debug\Vinoteca.Servicios.csproj.AssemblyReference.cache
-C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\obj\Debug\Vinoteca.Servicios.csproj.CoreCompileInputs.cache
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\bin\Debug\Vinoteca.Servicios.dll
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\bin\Debug\Vinoteca.Servicios.pdb
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\bin\Debug\PagedList.dll
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\bin\Debug\System.Web.Helpers.dll
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\bin\Debug\System.Web.Mvc.dll
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\bin\Debug\System.Web.Razor.dll
@@ -15,6 +14,7 @@ C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\bin\De
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\bin\Debug\Vinoteca.Datos.pdb
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\bin\Debug\Vinoteca.Datos.dll.config
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\bin\Debug\Vinoteca.Entidades.pdb
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\bin\Debug\PagedList.xml
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\bin\Debug\System.Web.Helpers.xml
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\bin\Debug\System.Web.Mvc.xml
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\bin\Debug\System.Web.Razor.xml
@@ -28,6 +28,8 @@ C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\bin\De
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\bin\Debug\es\System.Web.WebPages.resources.dll
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\bin\Debug\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\bin\Debug\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\obj\Debug\Vinoteca.Servicios.csproj.AssemblyReference.cache
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\obj\Debug\Vinoteca.Servicios.csproj.CoreCompileInputs.cache
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\obj\Debug\Vinoteca.Servicios.csproj.CopyComplete
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\obj\Debug\Vinoteca.Servicios.dll
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Servicios\obj\Debug\Vinoteca.Servicios.pdb

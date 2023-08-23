@@ -11,6 +11,8 @@ namespace Vinoteca.Web.ViewModels.Variedad
         public int VariedadId { get; set; }
         [DisplayName("Variedad")]
         public string NombreVariedad { get; set; }
+        [DisplayName("Cant. Variedades")]
+        public int CantidadVariedades { get; set; }
         public byte[] RowVersion { get; set; }
     }
 }
