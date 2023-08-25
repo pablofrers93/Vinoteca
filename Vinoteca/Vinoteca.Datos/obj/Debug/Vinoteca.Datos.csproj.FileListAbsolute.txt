@@ -33,3 +33,8 @@ C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Datos\obj\Debug\
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Datos\obj\Debug\Vinoteca.Datos.csproj.CopyComplete
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Datos\obj\Debug\Vinoteca.Datos.dll
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Datos\obj\Debug\Vinoteca.Datos.pdb
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Datos\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Datos\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Datos\bin\Debug\Vinoteca.Entidades.dll.config
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Datos\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Datos\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml

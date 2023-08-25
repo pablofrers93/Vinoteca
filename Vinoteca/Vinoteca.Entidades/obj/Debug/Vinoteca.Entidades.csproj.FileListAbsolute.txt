@@ -7,3 +7,12 @@ C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Entidades\obj\De
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Entidades\obj\Debug\Vinoteca.Entidades.csproj.CopyComplete
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Entidades\obj\Debug\Vinoteca.Entidades.dll
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Entidades\obj\Debug\Vinoteca.Entidades.pdb
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Entidades\bin\Debug\Vinoteca.Entidades.dll.config
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Entidades\bin\Debug\EntityFramework.dll
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Entidades\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Entidades\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Entidades\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Entidades\bin\Debug\EntityFramework.xml
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Entidades\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Entidades\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Entidades\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml

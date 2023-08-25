@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Vinoteca.Web.App_Start;
+using Vinoteca.Web.Helpers;
 
 namespace Vinoteca.Web
 {
@@ -13,11 +14,18 @@ namespace Vinoteca.Web
     {
         protected void Application_Start()
         {
+            CreateRolesAndSuperUser();
             AutoMapperConfig.Inicialize();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+        private void CreateRolesAndSuperUser()
+        {
+            UserHelper.CheckRole("Admin");
+            UserHelper.CheckRole("Cliente");
+            UserHelper.CheckSuperUser();
         }
     }
 }
