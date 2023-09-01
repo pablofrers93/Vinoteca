@@ -93,6 +93,21 @@ namespace Vinoteca.Datos.Repositorios
             return _context.Usuarios.Count();
         }
 
+        public Usuario GetUsuarioPorEmail(string email)
+        {
+            try
+            {
+                return _context.Usuarios
+                    .AsNoTracking()
+                    .SingleOrDefault(c => c.Email == email);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public Usuario GetUsuarioPorId(int id)
         {
             try

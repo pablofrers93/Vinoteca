@@ -24,6 +24,7 @@ namespace Vinoteca.Datos
         public DbSet<Variedad> Variedades { get; set; } 
         public DbSet<Venta> Ventas { get; set; }
         public DbSet<VentaProducto> VentasProductos { get;set; }
+        public DbSet<ItemCarrito> Carrito { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

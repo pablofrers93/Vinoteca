@@ -58,7 +58,7 @@
                 </ul>
             </div>
             @Html.Partial("_LoginPartial")
-            @if (User.IsInRole("Cliente"))
+            @*@if (User.IsInRole("Cliente"))*@
             {
                 @Html.Action("MostrarCarrito", "Carrito")
             }

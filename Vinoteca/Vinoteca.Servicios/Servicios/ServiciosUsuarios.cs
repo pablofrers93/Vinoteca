@@ -83,6 +83,19 @@ namespace Vinoteca.Servicios.Servicios
             }
         }
 
+        public Usuario GetUsuarioPorEmail(string mail)
+        {
+            try
+            {
+                return _repositorio.GetUsuarioPorEmail(mail);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public Usuario GetUsuarioPorId(int id)
         {
             try

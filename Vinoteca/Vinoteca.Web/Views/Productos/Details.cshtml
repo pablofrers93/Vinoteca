@@ -26,7 +26,7 @@
                 <span class="text-decoration-line-through">@(Model.PrecioVenta+500)</span>
                 <span>@Model.PrecioVenta</span>
             </div>
-            <p class="lead">Stock: <strong>@Model.UnidadesDisponibles</strong> </p>
+            <p class="lead">Stock: <strong>@Model.Stock</strong> </p>
             @using (Html.BeginForm("AddToCart", "Carrito", FormMethod.Post))
             {
                 <div class="d-flex">

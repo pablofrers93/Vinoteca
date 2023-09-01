@@ -13,7 +13,7 @@ namespace Vinoteca.Servicios.Interfaces
     {
         List<VentaProductoListDto> GetVentaProducto(int ventaId);
         List<VentaListDto> GetVentas();
-        void Guardar(Venta venta);
+        void Guardar(Venta venta, string name);
         int GetCantidad();
         VentaListDto GetVentasPorId(int id);
     }

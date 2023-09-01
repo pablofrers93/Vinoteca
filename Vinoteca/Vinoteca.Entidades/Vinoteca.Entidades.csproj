@@ -68,6 +68,8 @@
     <Compile Include="Dtos\Venta\VentaListDto.cs" />
     <Compile Include="Dtos\Venta\VentaDetalleDto.cs" />
     <Compile Include="Entidades\Bodega.cs" />
+    <Compile Include="Entidades\CheckOut.cs" />
+    <Compile Include="Entidades\ItemCarrito.cs" />
     <Compile Include="Entidades\Permiso.cs" />
     <Compile Include="Entidades\Producto.cs" />
     <Compile Include="Entidades\Rol.cs" />
@@ -76,6 +78,7 @@
     <Compile Include="Entidades\Variedad.cs" />
     <Compile Include="Entidades\Venta.cs" />
     <Compile Include="Entidades\VentaProducto.cs" />
+    <Compile Include="Enum\Estado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

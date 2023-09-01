@@ -20,5 +20,6 @@ namespace Vinoteca.Datos.Interfaces
         //List<UsuarioListDto> GetUsuarios(int paisId, int ciudadId);
         List<UsuarioListDto> Filtrar(Func<Usuario, bool> predicado);
         int GetCantidad();
+        Usuario GetUsuarioPorEmail(string email);
     }
 }

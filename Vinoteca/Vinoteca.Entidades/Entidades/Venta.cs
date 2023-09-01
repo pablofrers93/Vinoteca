@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vinoteca.Entidades.Enum;
 
 namespace Vinoteca.Entidades.Entidades
 {
@@ -13,6 +14,8 @@ namespace Vinoteca.Entidades.Entidades
         public DateTime Fecha { get; set; }
         public bool Anulado { get; set; }
         public decimal Importe { get; set; }
+        public Estado Estado { get; set; }
+        public string TransaccionId { get; set; }
         public Usuario Usuario { get; set; }
         public List<VentaProducto> Detalles { get; set; }
         public Venta()

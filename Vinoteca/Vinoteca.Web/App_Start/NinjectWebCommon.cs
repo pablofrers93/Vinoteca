@@ -14,6 +14,7 @@ namespace Vinoteca.Web.App_Start
     using Vinoteca.Datos;
     using Vinoteca.Datos.Interfaces;
     using Vinoteca.Datos.Repositorios;
+    using Vinoteca.Servicios;
     using Vinoteca.Servicios.Interfaces;
     using Vinoteca.Servicios.Servicios;
 
@@ -78,6 +79,8 @@ namespace Vinoteca.Web.App_Start
             kernel.Bind<IServiciosProductos>().To<ServiciosProductos>().InRequestScope();
             kernel.Bind<IRepositorioVentas>().To<RepositorioVentas>().InRequestScope();
             kernel.Bind<IServiciosVentas>().To<ServiciosVentas>().InRequestScope();
+            kernel.Bind<IRepositorioCarritos>().To<RepositorioCarrito>().InRequestScope();
+            kernel.Bind<IServiciosCarritos>().To<ServiciosCarritos>().InRequestScope();
             kernel.Bind<IRepositorioTipoProductos>().To<RepositorioTipoProductos>().InRequestScope();
             kernel.Bind<IServiciosTipoProductos>().To<ServiciosTipoProductos>().InRequestScope();
             kernel.Bind<IRepositorioVentasProductos>().To<RepositorioVentasProductos>().InRequestScope();

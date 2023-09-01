@@ -18,5 +18,6 @@ namespace Vinoteca.Servicios.Interfaces
         void Guardar(Usuario usuario);
         List<UsuarioListDto> Filtrar(Func<Usuario, bool> predicado);
         int GetCantidad();
+        Usuario GetUsuarioPorEmail(string mail);
     }
 }

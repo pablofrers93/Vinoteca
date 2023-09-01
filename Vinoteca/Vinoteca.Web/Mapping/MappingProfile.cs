@@ -6,6 +6,7 @@ using System.Web;
 using Vinoteca.Entidades.Dtos.Producto;
 using Vinoteca.Entidades.Dtos.Venta;
 using Vinoteca.Entidades.Entidades;
+using Vinoteca.Web.ViewModels.Carrito;
 using Vinoteca.Web.ViewModels.Producto;
 using Vinoteca.Web.ViewModels.Variedad;
 using Vinoteca.Web.ViewModels.Venta;
@@ -20,9 +21,15 @@ namespace Vinoteca.Web.Mapping
             LoadVariedadesMapping();
             LoadProductosMapping();
             LoadVentasMapping();
+            LoadVentasMapping();
             LoadBodegasMapping();
+            LoadCarritoMapping();
         }
 
+        private void LoadCarritoMapping()
+        {
+            CreateMap<ItemCarrito, ItemCarritoVm>();
+        }
         private void LoadBodegasMapping()
         {
             CreateMap<Bodega, BodegaListVm>().ReverseMap();
