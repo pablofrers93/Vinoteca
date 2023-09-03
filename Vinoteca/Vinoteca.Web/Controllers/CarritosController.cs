@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Vinoteca.Entidades.Entidades;
@@ -9,6 +11,7 @@ using Vinoteca.Entidades.Enum;
 using Vinoteca.Servicios;
 using Vinoteca.Servicios.Interfaces;
 using Vinoteca.Web.App_Start;
+using Vinoteca.Web.Models;
 using Vinoteca.Web.Models.Carrito;
 using Vinoteca.Web.ViewModels.Carrito;
 
@@ -174,7 +177,7 @@ namespace Vinoteca.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ConfirmOrder(CheckOutVm model)
+        public async Task<ActionResult> ConfirmOrderAsync(CheckOutVm model)
         {
             _carrito = GetCarrito();
             var listaItem = _carrito.GetItems();
@@ -200,6 +203,53 @@ namespace Vinoteca.Web.Controllers
             return View(model);
 
         }
+        //private PaymentResult CheckOut(CheckOutVm model)
+        //{
+        //    Usuario usuario = _serviciosUsuarios.GetUsuarioPorEmail(User.Identity.Name);
+        //    var venta = new Venta()
+        //    {
+        //        UsuarioId = usuario.UsuarioId,
+        //        Fecha = DateTime.Now,
+        //        Estado = Estado.Impaga,
+        //        Importe = _carrito.GetTotal()
+        //    };
+        //    foreach (var item in model.Carrito.Items)
+        //    {
+        //        VentaProducto ventaProducto = new VentaProducto()
+        //        {
+
+        //            ProductoId = item.ProductoId,
+        //            Cantidad = item.Cantidad,
+        //            Precio = item.PrecioTotal,
+
+        //        };
+        //        venta.Detalles.Add(ventaProducto);
+        //    }
+        //    //TODO:Autorizar el pago
+        //    var checkout = new CheckOut()
+        //    {
+        //        Venta = venta,
+        //        CardNumber = model.CardNumber,
+        //        CVV = model.CVV,
+        //        Month = model.Month,
+        //        Year = model.Year,
+        //    };
+        //    var gateway = new PaymentGateway();
+        //    var resultado = gateway.ProcesarPago(checkout);
+        //    if (resultado.Exitoso)
+        //    {
+        //        _carrito = GetCarrito();
+        //        _carrito.Clear();
+        //        Session["carrito"] = _carrito;
+
+        //        venta.TransaccionId = resultado.TransaccionId;
+        //        _serviciosVentas.Guardar(venta, User.Identity.Name);
+
+        //    }
+        //    //TODO:Obtener TransaccionId
+        //    return resultado;
+        //}
+
         private PaymentResult CheckOut(CheckOutVm model)
         {
             Usuario usuario = _serviciosUsuarios.GetUsuarioPorEmail(User.Identity.Name);
@@ -217,7 +267,7 @@ namespace Vinoteca.Web.Controllers
 
                     ProductoId = item.ProductoId,
                     Cantidad = item.Cantidad,
-                    Precio = item.Precio,
+                    Precio = item.PrecioTotal,
 
                 };
                 venta.Detalles.Add(ventaProducto);

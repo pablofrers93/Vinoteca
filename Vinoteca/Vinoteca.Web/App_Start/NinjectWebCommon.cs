@@ -17,6 +17,7 @@ namespace Vinoteca.Web.App_Start
     using Vinoteca.Servicios;
     using Vinoteca.Servicios.Interfaces;
     using Vinoteca.Servicios.Servicios;
+    using Vinoteca.Web.Models;
 
     public static class NinjectWebCommon 
     {

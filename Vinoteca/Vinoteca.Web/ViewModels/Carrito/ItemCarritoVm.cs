@@ -11,14 +11,14 @@ namespace Vinoteca.Web.ViewModels.Carrito
         public int ProductoId { get; set; }
 
         [DisplayName("Producto")]
-        public string Descripcion { get; set; }
+        public string NombreProducto { get; set; }
         public int Cantidad { get; set; }
 
         [DisplayName("P. Unit.")]
 
-        public decimal Precio { get; set; }
+        public decimal PrecioUnitario { get; set; }
 
         [DisplayName("P. Total")]
-        public decimal Importe => Cantidad * Precio;
+        public decimal PrecioTotal => Cantidad * PrecioUnitario;
     }
 }

@@ -12,10 +12,10 @@
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
-            <th>@Html.DisplayNameFor(model => model.Items.FirstOrDefault().Descripcion)</th>
-            <th>@Html.DisplayNameFor(model => model.Items.FirstOrDefault().Precio)</th>
-            <th>@Html.DisplayNameFor(model => model.Items.FirstOrDefault().Cantidad)</th>
-            <th>@Html.DisplayNameFor(model => model.Items.FirstOrDefault().Importe)</th>
+            <th>@Html.DisplayNameFor(model => model.Items[0].NombreProducto)</th>
+            <th>@Html.DisplayNameFor(model => model.Items[0].PrecioUnitario)</th>
+            <th>@Html.DisplayNameFor(model => model.Items[0].Cantidad)</th>
+            <th>@Html.DisplayNameFor(model => model.Items[0].PrecioTotal)</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -23,16 +23,16 @@
         @foreach (var item in Model.Items)
         {
             <tr>
-                <td>@item.Descripcion</td>
-                <td style="text-align:right">@item.Precio.ToString("N")</td>
+                <td>@item.NombreProducto</td>
+                <td style="text-align:right">@item.PrecioUnitario</td>
                 <td style="text-align:right">@item.Cantidad</td>
-                <td style="text-align:right">@item.Importe.ToString("N")</td>
+                <td style="text-align:right">@item.PrecioTotal</td>
                 <td>
                     <form method="post" action="@Url.Action("RemoveFromCart","Carrito")" id="deleteForm">
                         @Html.Hidden("productoId", item.ProductoId)
                         @Html.Hidden("returnUrl", Model.returnUrl)
 
-                        <button type="submit" class="btn btn-danger" onclick="return ConfirmarBorrado('@item.Descripcion')">
+                        <button type="submit" class="btn btn-danger" onclick="return ConfirmarBorrado('@item.NombreProducto')">
                             <i class="fa fa-trash"></i>
                             Borrar
                         </button>
@@ -45,7 +45,7 @@
             <td class="fw-bold">Totales:</td>
 
             <td colspan="2" class="fw-bold" style="text-align:right">@Model.Items.Sum(i => i.Cantidad)</td>
-            <td class="fw-bold" style="text-align:right">@Model.Items.Sum(i => i.Importe).ToString("N")</td>
+            <td class="fw-bold" style="text-align:right">@Model.Items.Sum(i => i.PrecioTotal).ToString("N")</td>
         </tr>
     </tbody>
 </table>
