@@ -24,7 +24,7 @@ namespace Vinoteca.Web
         private void CreateRolesAndSuperUser()
         {
             UserHelper.CheckRole("Admin");
-            UserHelper.CheckRole("Cliente");
+            UserHelper.CheckRole("Usuario");
             UserHelper.CheckSuperUser();
         }
     }

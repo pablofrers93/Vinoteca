@@ -45,6 +45,7 @@ namespace Vinoteca.Web.Controllers
 
             return View(listaVm.ToPagedList(page.Value, pageSize.Value));
         }
+        [Authorize]
         public ActionResult Create()
         {
             var productoVm = new ProductoEditVm
@@ -107,6 +108,7 @@ namespace Vinoteca.Web.Controllers
             }
         }
 
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -164,6 +166,8 @@ namespace Vinoteca.Web.Controllers
                 return View(productoVm);
             }
         }
+
+        [Authorize]
         public ActionResult Delete (int? id)
         {
             if (id == null)
