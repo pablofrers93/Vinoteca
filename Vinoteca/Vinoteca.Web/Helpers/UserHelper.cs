@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Configuration;
 using Vinoteca.Web.Models;
 using Vinoteca.Datos;
+using System.Web.Helpers;
 
 namespace Vinoteca.Web.Helpers
 {
@@ -104,12 +105,23 @@ namespace Vinoteca.Web.Helpers
             var userAsp = userManager.FindByEmail(currentUserName);
             if (userAsp == null)
             {
-                return false;
+                userAsp = new ApplicationUser
+                {
+                    Email = newUserName,
+                    UserName = newUserName,
+                };
+                userManager.Create(userAsp, newUserName);
+                userManager.AddToRole(userAsp.Id, "Cliente");
+                return true;
             }
-            userAsp.UserName = newUserName;
-            userAsp.Email = newUserName;
-            var response = userManager.Update(userAsp);
-            return true;
+            else
+            {
+                userAsp.UserName = newUserName;
+                userAsp.Email = newUserName;
+                var response = userManager.Update(userAsp);
+                return true;
+            }
+            return false;
         }
         public void Dispose()
         {

@@ -32,8 +32,12 @@ namespace Vinoteca.Web.Controllers
             page = page ?? 1;
             pageSize = pageSize ?? 10;
             ViewBag.PageSize = pageSize;
+            if (User.IsInRole("Admin"))
+            {
+                return View(listaVm.ToPagedList(page.Value, pageSize.Value));
+            }
+            return View("ReadOnlyIndex", listaVm.ToPagedList(page.Value, pageSize.Value));
 
-            return View(listaVm.ToPagedList(page.Value, pageSize.Value));
         }
 
         private IPagedList<VariedadListVm> GetListaVariedadesListVm(List<Variedad> lista, int? page, int pageSize)

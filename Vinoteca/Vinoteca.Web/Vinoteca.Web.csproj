@@ -218,6 +218,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\VariedadesController.cs" />
     <Compile Include="Controllers\VentasController.cs" />
     <Compile Include="Global.asax.cs">
@@ -390,11 +391,14 @@
     <Content Include="Views\Carrito\CancelOrder.cshtml" />
     <Content Include="Views\Carrito\ConfirmOrder.cshtml" />
     <Content Include="Views\Carrito\Complete.cshtml" />
+    <Content Include="Views\Variedades\ReadOnlyIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Imagenes\Productos\" />
+    <Folder Include="ViewModels\Usuario\" />
     <Folder Include="Views\Carritos\" />
+    <Folder Include="Views\Usuarios\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
