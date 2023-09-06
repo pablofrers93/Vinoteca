@@ -1,7 +1,8 @@
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Web\bin\roslyn\csc.exe
+C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Web\bin\Vinoteca.Web.dll.config
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Web\bin\Vinoteca.Web.dll
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Web\bin\Vinoteca.Web.pdb
-C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Web\bin\roslyn\csc.exe
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Web\bin\roslyn\csc.exe.config
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Web\bin\roslyn\csc.rsp
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Web\bin\roslyn\csi.exe
@@ -10,7 +11,6 @@ C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Web\bin\roslyn\c
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\pablo\OneDrive\Desktop\Proyecto .NET\Vinoteca\Vinoteca.Web\bin\roslyn\Microsoft.CSharp.Core.targets
