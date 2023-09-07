@@ -24,12 +24,17 @@ namespace Vinoteca.Web
             bundles.Add(new Bundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/bootstrap.bundle.js",
-                      "~/Scripts/toastr.js"));
+                      "~/Scripts/toastr.js",
+                      "~/Scripts/fontawesome/all.min.js",
+                      "~/Scripts/sweetalert2.all.min.js"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
-                      "~/Content/toastr.css"));
+                       "~/Content/PagedList.css",
+                      "~/Content/toastr.css",
+                      "~/Content/all.min.css"));
         }
     }
 }

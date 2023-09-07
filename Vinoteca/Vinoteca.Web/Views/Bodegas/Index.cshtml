@@ -11,10 +11,9 @@
         @Html.ActionLink("Nueva", "Create", null, new { @class = "btn btn-primary" })
     </p>
 </div>
-@if (!string.IsNullOrEmpty(TempData["Msg"] as string))
-{
-    <div class="alert alert-success">@TempData["Msg"]</div>
-}
+
+
+
 <table class="border-0 table table-bordered table-hover table-dark w-95">
     <tr>
         <th>
